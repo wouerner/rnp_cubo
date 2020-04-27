@@ -25,26 +25,31 @@
 
 <script>
 function inicializar() {
+  /* window.navBarWidget = window.NasNuvensWidget.new({ container: '#dockbarContainer', nasnuvens: true }); */
+
   widget = NasNuvensWidget.new(
     {
       //seletor CSS do container a ser utilizado para renderizar o widget
       container : '#root' ,
+      nasnuvens: true,
       //site de origem (que está utilizando o widget)
       origem: {
         //nome utilizado em alguns pontos do widget e integração com outros serviços
-        nome: "Conferência Web",
+        /* nome: "Poc Reseller", */
         //URL do logo tipo do site de origem
-        logo: "https://nasnuvens.gsc-hmg.rnp.br/img-servicos-temp/confweb.png",
+        /* logo: "https://nasnuvens.gsc-hmg.rnp.br/img-servicos-temp/confweb.png", */
         //URL do site de origem, utilizado ao clicar na logo e em alguns fluxos da navbar
-        site: "https://conferenciaweb.rnp.br/",
+        /* site: "https://pocresellergw.nasnuvens.rnp.br", */
+        /* https://shib-uat.nasnuvens.rnp.br/Shibboleth.sso/Login?target=https://shib-uat.nasnuvens.rnp.br/jc-idp-connector-0.0.1-SNAPSHOT/login */
         //URL a ser utilizada pelo serviço de autenticação para enviar o redirecionamento pós-login,
         //se não for informado será utilizado o atributo "site" da configuração.
         //Exemplo com placeholder do EntityID recuperado da sessão CAFe:
         //https://conferenciaweb.rnp.br/?idp=_REDIRECT_ENTITYID_
-        loginRedirect: null,
+        /* loginRedirect: null, */
+        loginRedirect:  'https://shib-uat.nasnuvens.rnp.br/Shibboleth.sso/Login?entityID=_REDIRECT_ENTITYID_&target=https://shib-uat.nasnuvens.rnp.br/jc-idp-connector-0.0.1-SNAPSHOT/login',
         //URL de redirect após o logout do serviço de autenticação,
         //se não for informado será utilizado o atributo "site" da configuração.
-        logoutRedirect: null
+        /* logoutRedirect: 'https://pocresellergw.nasnuvens.rnp.br' */
       }
     });
 
