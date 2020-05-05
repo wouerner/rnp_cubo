@@ -1,40 +1,21 @@
-<div id="rnp-top-nav">
-  <div id="root"></div>
-</div>
+<div id="cubo"></div>
 
 <script>
 function inicializar() {
-
   widget = NasNuvensWidget.new(
     {
-      container : '#root' ,
-      nasnuvens: true,
-      origem: {
-        site: "https://pocresellergw.nasnuvens.rnp.br/",
-        loginRedirect: 'https://shib-uat.nasnuvens.rnp.br/Shibboleth.sso/Login?entityID=_REDIRECT_ENTITYID_&target=https://shib-uat.nasnuvens.rnp.br/jc-idp-connector-0.0.1-SNAPSHOT/login',
+      container : '#cubo' ,
+      cubo: {
+      corFundo: 'transparent',  //padrão: transparent
+        corBlocos: '#000'  //padrão: #000
       }
-    });
+    }
+  );
 
-  widget.render();
+  widget.renderCuboServicos() ;
 }
 
 inicializar();
-
-/* Exemplo da nossa aplicação FileSender: */
-
-/* widget = NasNuvensWidget.new({ */
-/* 	container: '#navbar', */
-/* 	origem: { */
-/* 		nome: 'FileSender RNP', */
-/* 		logo: 'https://filesender.rnp.br/images/RPN_filesender.png', */
-/* 		site: 'https://filesender.rnp.br/', */
-/* 		loginRedirect: 'https://filesender.rnp.br/Shibboleth.sso/DS?entityID=_REDIRECT_ENTITYID_&target=https://filesender.rnp.br/', */
-/* 		logoutRedirect: 'https://filesender.rnp.br/Shibboleth.sso/Logout?return=https://filesender.rnp.br/' */
-/* 	} */
-/* }); */
-/* widget.render() */
-
-
 </script>
 
 <style>
@@ -53,4 +34,32 @@ drupal_add_js('https://nasnuvens.gsc-hmg.rnp.br/navbar/widget.js', array(
   'type' => 'external',
   'scope' => 'header'
 ));
+
+/* drupal_add_js(drupal_get_path('module', 'rnp_cubo') . '/dist/cubo.js', array( */
+/*   'type' => 'file', */
+/*   'scope' => 'footer' */
+/* )); */
+
+/* drupal_add_js(drupal_get_path('module', 'rnp_cubo') . '/dist/chunk-vendors.js', array( */
+/*   'type' => 'file', */
+/*   'scope' => 'footer' */
+/* )); */
+
+/* drupal_add_js(drupal_get_path('module', 'rnp_cubo') . '/dist/chunk-common.js', array( */
+/*   'type' => 'file', */
+/*   'scope' => 'footer' */
+/* )); */
+
+/* drupal_add_css(drupal_get_path('module', '/dist/chunk-vendors.css'), */
+/*   array('type' => 'file', */
+/*   'scope' => 'footer' */
+/*   ) */
+/* ); */
+
+/* drupal_add_css( */
+/*   drupal_get_path('module', 'rnp_cubo') . '/dist/cubo.css', */
+/*   array('type' => 'file', */
+/*   'scope' => 'footer' */
+/*   ) */
+/* ); */
 ?>
