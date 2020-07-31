@@ -30,10 +30,19 @@ inicializar();
 </style>
 
 <?php
-drupal_add_js('https://nasnuvens.gsc-hmg.rnp.br/navbar/widget.js', array(
-  'type' => 'external',
-  'scope' => 'header'
-));
+if ( $_SERVER['SERVER_NAME'] == 'pocresellergw.nasnuvens.rnp.br') {
+  drupal_add_js('https://nasnuvens.gsc-hmg.rnp.br/navbar/widget.js', array(
+    'type' => 'external',
+    'scope' => 'header'
+  ));
+}
+
+if ( $_SERVER['SERVER_NAME'] == 'www.nasnuvens.rnp.br') {
+  drupal_add_js('https://nasnuvens.rnp.br/navbar/widget.js', array(
+    'type' => 'external',
+    'scope' => 'header'
+  ));
+}
 
 /* drupal_add_js(drupal_get_path('module', 'rnp_cubo') . '/dist/cubo.js', array( */
 /*   'type' => 'file', */
